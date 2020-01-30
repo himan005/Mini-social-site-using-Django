@@ -16,13 +16,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'account.apps.AccountConfig',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.apps.AccountConfig'
+    'django.contrib.admin',
+
 ]
 
 MIDDLEWARE = [
@@ -112,4 +113,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_deploy', 'static_root')
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'stati_deploy', 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static_deploy', 'media_root')
+
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
